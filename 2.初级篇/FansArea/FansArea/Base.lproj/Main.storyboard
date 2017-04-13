@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -15,7 +16,7 @@
             <objects>
                 <tableViewController id="i4h-Co-7si" customClass="AreaTableViewController" customModule="FansArea" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" id="4ex-CB-a9S">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -63,7 +64,7 @@
                                     <outlet property="provinceLabel" destination="EWH-ej-DYz" id="IWX-CT-g6C"/>
                                     <outlet property="thumbImageView" destination="ufS-83-jNO" id="eMp-hb-T4z"/>
                                     <outlet property="visitImageView" destination="T2B-cD-eyu" id="tf8-cg-cH6"/>
-                                    <segue destination="yIQ-WX-4Bc" kind="show" identifier="showAreaDetail" id="ymW-Tb-sEd"/>
+                                    <segue destination="T3l-gq-prG" kind="show" identifier="showAreaDetail" id="5Bn-WU-3Of"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -78,46 +79,86 @@
             </objects>
             <point key="canvasLocation" x="1524" y="87"/>
         </scene>
-        <!--Area Detail View Controller-->
-        <scene sceneID="h5a-e6-Wci">
+        <!--Detail Table View Controller-->
+        <scene sceneID="Idg-BA-GSH">
             <objects>
-                <viewController id="yIQ-WX-4Bc" customClass="AreaDetailViewController" customModule="FansArea" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Ofs-zN-qkb"/>
-                        <viewControllerLayoutGuide type="bottom" id="tfk-0G-ZaM"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="koh-7Y-NVw">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                <tableViewController id="T3l-gq-prG" customClass="DetailTableViewController" customModule="FansArea" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="nwk-zh-dWi">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="noP-pz-cCy">
-                                <rect key="frame" x="16" y="64" width="288" height="504"/>
-                            </imageView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="tfk-0G-ZaM" firstAttribute="top" secondItem="noP-pz-cCy" secondAttribute="bottom" id="61U-II-387"/>
-                            <constraint firstItem="noP-pz-cCy" firstAttribute="top" secondItem="Ofs-zN-qkb" secondAttribute="bottom" id="iOz-TQ-jnp"/>
-                            <constraint firstItem="noP-pz-cCy" firstAttribute="trailing" secondItem="koh-7Y-NVw" secondAttribute="trailingMargin" id="ldD-Mh-YoN"/>
-                            <constraint firstItem="noP-pz-cCy" firstAttribute="leading" secondItem="koh-7Y-NVw" secondAttribute="leadingMargin" id="sul-jN-UwY"/>
-                        </constraints>
-                    </view>
+                        <imageView key="tableHeaderView" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="RcQ-re-3B0">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailCell" rowHeight="36" id="zmr-Bu-tGo" customClass="DetailTableViewCell" customModule="FansArea" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="328" width="320" height="36"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zmr-Bu-tGo" id="ZMV-Po-QKg">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="35.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o8c-8d-bz2">
+                                            <rect key="frame" x="8" y="8" width="304" height="20.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="261" verticalHuggingPriority="251" text="字段" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HxS-9U-clG">
+                                                    <rect key="frame" x="0.0" y="0.0" width="101.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="值" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gjL-cP-dYh">
+                                                    <rect key="frame" x="101.5" y="0.0" width="202.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="HxS-9U-clG" firstAttribute="width" secondItem="gjL-cP-dYh" secondAttribute="width" multiplier="0.5" id="78K-6b-1p9"/>
+                                            </constraints>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="o8c-8d-bz2" secondAttribute="trailing" id="EAr-y1-hn6"/>
+                                        <constraint firstItem="o8c-8d-bz2" firstAttribute="leading" secondItem="ZMV-Po-QKg" secondAttribute="leadingMargin" id="af3-LM-71I"/>
+                                        <constraint firstItem="o8c-8d-bz2" firstAttribute="centerY" secondItem="ZMV-Po-QKg" secondAttribute="centerY" id="gmq-gq-Q7I"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="fieldLabel" destination="HxS-9U-clG" id="3Aj-18-kdT"/>
+                                    <outlet property="valueLabel" destination="gjL-cP-dYh" id="63w-P1-1Qb"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="T3l-gq-prG" id="u1w-36-bDt"/>
+                            <outlet property="delegate" destination="T3l-gq-prG" id="9Wt-kX-X0T"/>
+                        </connections>
+                    </tableView>
                     <connections>
-                        <outlet property="areaImageView" destination="noP-pz-cCy" id="1LC-nN-a1o"/>
+                        <outlet property="LargeImageView" destination="RcQ-re-3B0" id="wbv-4e-2jA"/>
                     </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="z20-wp-63s" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kha-Xc-ZtB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2342" y="87"/>
+            <point key="canvasLocation" x="2456" y="87"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nDQ-gv-xWF">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="s82-qe-jFa" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBarsOnSwipe="YES" id="s82-qe-jFa" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Idh-3d-hMo">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="Idh-3d-hMo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.94901960784313721" green="0.45490196078431372" blue="0.46666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="24"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
