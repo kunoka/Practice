@@ -86,7 +86,13 @@
                             <outlet property="delegate" destination="i4h-Co-7si" id="5XS-iv-2E2"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="粉丝区域" id="lTh-jW-Wvg"/>
+                    <navigationItem key="navigationItem" title="粉丝区域" id="lTh-jW-Wvg">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="aOf-pC-Pdx">
+                            <connections>
+                                <segue destination="vU3-6J-5EO" kind="presentation" identifier="addArea" id="sao-oJ-CVt"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Egk-1b-xNA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -552,11 +558,19 @@
                             <outlet property="delegate" destination="BI8-H3-ATd" id="LbY-hG-9U5"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="新增" id="5Wb-Ca-ZrT"/>
+                    <navigationItem key="navigationItem" title="新增" id="5Wb-Ca-ZrT">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="JwU-uQ-fbN">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="798-Yk-b21" kind="unwind" unwindAction="closeWithSegue:" id="rE1-Pn-SRe"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0WP-Nl-L0d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="798-Yk-b21" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1981.875" y="810.21126760563379"/>
+            <point key="canvasLocation" x="2261" y="824"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="iMA-Ju-TWu">
@@ -574,7 +588,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Az1-b6-fkI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="984.375" y="810.21126760563379"/>
+            <point key="canvasLocation" x="1523" y="824"/>
         </scene>
     </scenes>
     <resources>

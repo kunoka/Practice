@@ -200,6 +200,9 @@ class AreaTableViewController: UITableViewController {
     }
     */
 
+    @IBAction func close(segue: UIStoryboardSegue) {
+        
+    }
     
     // MARK: - Navigation
 
