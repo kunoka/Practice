@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4AA376F01EA2FC55006EEBEC /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA376EF1EA2FC55006EEBEC /* ReviewViewController.swift */; };
+		4AA376F31EA34F79006EEBEC /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AA376F21EA34F79006EEBEC /* MapKit.framework */; };
 		4ACE01CB1E9E578100596450 /* Area.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACE01CA1E9E578100596450 /* Area.swift */; };
 		4ACE01D21E9F010600596450 /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACE01D11E9F010600596450 /* DetailTableViewController.swift */; };
 		4ACE01D41E9F03F800596450 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACE01D31E9F03F800596450 /* DetailTableViewCell.swift */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		4AA376EF1EA2FC55006EEBEC /* ReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
+		4AA376F21EA34F79006EEBEC /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		4ACE01CA1E9E578100596450 /* Area.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Area.swift; sourceTree = "<group>"; };
 		4ACE01CC1E9E594700596450 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		4ACE01D11E9F010600596450 /* DetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
@@ -40,17 +42,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AA376F31EA34F79006EEBEC /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4AA376F11EA34F79006EEBEC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4AA376F21EA34F79006EEBEC /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4AFA70BF1E9CF8E10049674B = {
 			isa = PBXGroup;
 			children = (
 				4AFA70CA1E9CF8E10049674B /* FansArea */,
 				4AFA70C91E9CF8E10049674B /* Products */,
+				4AA376F11EA34F79006EEBEC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -115,6 +127,11 @@
 						CreatedOnToolsVersion = 8.3.1;
 						DevelopmentTeam = K3E2M9U82B;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
