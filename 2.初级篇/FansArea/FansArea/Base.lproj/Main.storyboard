@@ -209,10 +209,10 @@
             </objects>
             <point key="canvasLocation" x="2456" y="87"/>
         </scene>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="NdK-ZF-s8o">
             <objects>
-                <viewController id="m9F-no-meE" sceneMemberID="viewController">
+                <viewController id="m9F-no-meE" customClass="MapViewController" customModule="FansArea" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="95P-Eo-Z9V"/>
                         <viewControllerLayoutGuide type="bottom" id="KMP-Rf-8Tk"/>
@@ -223,6 +223,9 @@
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="dca-sx-1Pl">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                <connections>
+                                    <outlet property="delegate" destination="m9F-no-meE" id="KTf-dA-BzL"/>
+                                </connections>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -235,6 +238,9 @@
                             <constraint firstAttribute="trailing" secondItem="dca-sx-1Pl" secondAttribute="trailing" id="j1y-EH-KFd"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="dca-sx-1Pl" id="gDx-gB-Rfz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m5Z-F3-BS3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
