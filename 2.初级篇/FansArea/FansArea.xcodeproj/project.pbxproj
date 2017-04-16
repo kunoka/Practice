@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4AA376F01EA2FC55006EEBEC /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA376EF1EA2FC55006EEBEC /* ReviewViewController.swift */; };
 		4ACE01CB1E9E578100596450 /* Area.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACE01CA1E9E578100596450 /* Area.swift */; };
 		4ACE01D21E9F010600596450 /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACE01D11E9F010600596450 /* DetailTableViewController.swift */; };
 		4ACE01D41E9F03F800596450 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACE01D31E9F03F800596450 /* DetailTableViewCell.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4AA376EF1EA2FC55006EEBEC /* ReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 		4ACE01CA1E9E578100596450 /* Area.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Area.swift; sourceTree = "<group>"; };
 		4ACE01CC1E9E594700596450 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		4ACE01D11E9F010600596450 /* DetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 			children = (
 				4AFA70CB1E9CF8E10049674B /* AppDelegate.swift */,
 				4AFA70CF1E9CF8E10049674B /* Main.storyboard */,
+				4AA376EF1EA2FC55006EEBEC /* ReviewViewController.swift */,
 				4ACE01D31E9F03F800596450 /* DetailTableViewCell.swift */,
 				4ACE01D11E9F010600596450 /* DetailTableViewController.swift */,
 				4ACE01CA1E9E578100596450 /* Area.swift */,
@@ -153,6 +156,7 @@
 			files = (
 				4ACE01D41E9F03F800596450 /* DetailTableViewCell.swift in Sources */,
 				4ACE01CB1E9E578100596450 /* Area.swift in Sources */,
+				4AA376F01EA2FC55006EEBEC /* ReviewViewController.swift in Sources */,
 				4ACE01D21E9F010600596450 /* DetailTableViewController.swift in Sources */,
 				4AFA70E01E9D03610049674B /* CustomTableViewCell.swift in Sources */,
 				4AFA70DE1E9CFAF10049674B /* AreaTableViewController.swift in Sources */,

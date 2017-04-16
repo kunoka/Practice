@@ -9,9 +9,8 @@
 import UIKit
 
 class DetailTableViewController: UITableViewController {
-
-
-
+    @IBOutlet weak var ratingBtn: UIButton!
+    
     @IBOutlet weak var LargeImageView: UIImageView!
     var area: Area!
     
@@ -21,6 +20,8 @@ class DetailTableViewController: UITableViewController {
         tableView.backgroundColor = UIColor(white: 0.98, alpha: 1)
         tableView.separatorColor = UIColor(white: 9, alpha: 1)
         tableView.tableFooterView = UIView(frame: CGRect.zero)
+        tableView.estimatedRowHeight = 40
+        tableView.rowHeight = UITableViewAutomaticDimension
         
         self.title = area.name
         // Uncomment the following line to preserve selection between presentations
@@ -119,5 +120,15 @@ class DetailTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    @IBAction func closeMe(segue: UIStoryboardSegue) {
+        let reviewVC = segue.source as! ReviewViewController
+        
+        if let rating = reviewVC.rating {
+            self.area.rating = rating
+            self.ratingBtn.setImage(UIImage(named: rating), for: .normal)
+        }
+        
+    }
 
 }
