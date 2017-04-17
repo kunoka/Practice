@@ -401,7 +401,7 @@
         <!--新增-->
         <scene sceneID="hi7-IS-C0V">
             <objects>
-                <tableViewController id="BI8-H3-ATd" sceneMemberID="viewController">
+                <tableViewController id="BI8-H3-ATd" customClass="AddAreaController" customModule="FansArea" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ppN-lM-K3a">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -566,6 +566,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="coverImageView" destination="o0a-nd-9v1" id="zHe-7u-DXb"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0WP-Nl-L0d" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="798-Yk-b21" userLabel="Exit" sceneMemberID="exit"/>
