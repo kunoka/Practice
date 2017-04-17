@@ -11,6 +11,7 @@
 		4AA376F31EA34F79006EEBEC /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AA376F21EA34F79006EEBEC /* MapKit.framework */; };
 		4AA376F51EA3637C006EEBEC /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA376F41EA3637C006EEBEC /* MapViewController.swift */; };
 		4AA376F71EA42AD6006EEBEC /* AddAreaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA376F61EA42AD6006EEBEC /* AddAreaController.swift */; };
+		4AA3771B1EA45A26006EEBEC /* FansArea.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4AA377191EA45A26006EEBEC /* FansArea.xcdatamodeld */; };
 		4ACE01CB1E9E578100596450 /* Area.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACE01CA1E9E578100596450 /* Area.swift */; };
 		4ACE01D21E9F010600596450 /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACE01D11E9F010600596450 /* DetailTableViewController.swift */; };
 		4ACE01D41E9F03F800596450 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACE01D31E9F03F800596450 /* DetailTableViewCell.swift */; };
@@ -27,6 +28,7 @@
 		4AA376F21EA34F79006EEBEC /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		4AA376F41EA3637C006EEBEC /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		4AA376F61EA42AD6006EEBEC /* AddAreaController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAreaController.swift; sourceTree = "<group>"; };
+		4AA3771A1EA45A26006EEBEC /* FansArea.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FansArea.xcdatamodel; sourceTree = "<group>"; };
 		4ACE01CA1E9E578100596450 /* Area.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Area.swift; sourceTree = "<group>"; };
 		4ACE01CC1E9E594700596450 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		4ACE01D11E9F010600596450 /* DetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				4AFA70D21E9CF8E10049674B /* Assets.xcassets */,
 				4AFA70D41E9CF8E10049674B /* LaunchScreen.storyboard */,
 				4AFA70D71E9CF8E10049674B /* Info.plist */,
+				4AA377191EA45A26006EEBEC /* FansArea.xcdatamodeld */,
 			);
 			path = FansArea;
 			sourceTree = "<group>";
@@ -183,6 +186,7 @@
 				4AA376F01EA2FC55006EEBEC /* ReviewViewController.swift in Sources */,
 				4ACE01D21E9F010600596450 /* DetailTableViewController.swift in Sources */,
 				4AFA70E01E9D03610049674B /* CustomTableViewCell.swift in Sources */,
+				4AA3771B1EA45A26006EEBEC /* FansArea.xcdatamodeld in Sources */,
 				4AFA70DE1E9CFAF10049674B /* AreaTableViewController.swift in Sources */,
 				4AFA70CC1E9CF8E10049674B /* AppDelegate.swift in Sources */,
 				4AA376F51EA3637C006EEBEC /* MapViewController.swift in Sources */,
@@ -352,6 +356,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4AA377191EA45A26006EEBEC /* FansArea.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4AA3771A1EA45A26006EEBEC /* FansArea.xcdatamodel */,
+			);
+			currentVersion = 4AA3771A1EA45A26006EEBEC /* FansArea.xcdatamodel */;
+			path = FansArea.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 4AFA70C01E9CF8E10049674B /* Project object */;
 }
