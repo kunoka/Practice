@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import CoreData
 
-class AreaTableViewController: UITableViewController {
+class AreaTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
 
     var areas: [AreaMO] = []
+    var fc: NSFetchedResultsController<AreaMO>!
     
 //    override var preferredStatusBarStyle: UIStatusBarStyle {
 //        return .lightContent
@@ -34,8 +36,70 @@ class AreaTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        fetchAllData2()
     }
-
+    
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.beginUpdates()
+    }
+    
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.endUpdates()
+    }
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        switch type {
+        case .delete:
+            tableView.deleteRows(at: [indexPath!], with: .automatic)
+        case .insert:
+            tableView.insertRows(at: [newIndexPath!], with: .automatic)
+        case .update:
+            tableView.reloadRows(at: [indexPath!], with: .automatic)
+        default:
+            tableView.reloadData()
+        }
+        if let object = controller.fetchedObjects {
+            areas = object as! [AreaMO]
+        }
+    }
+    
+    func fetchAllData2() {
+        let request: NSFetchRequest<AreaMO> = AreaMO.fetchRequest() //获取全部数据
+        let sd = NSSortDescriptor(key: "name", ascending: true)
+        request.sortDescriptors = [sd]
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        fc = NSFetchedResultsController(fetchRequest: request , managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+        fc.delegate = self
+        
+        do {
+            try fc.performFetch()
+            if let objects = fc.fetchedObjects {
+                areas = objects
+            }
+        } catch{
+            print(error)
+        }
+        
+    }
+    
+//    func fetchAllData() {
+//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//        do {
+//           areas = try appDelegate.persistentContainer.viewContext.fetch(AreaMO.fetchRequest())
+//        
+//        } catch {
+//            print(error)
+//        }
+//    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+//        fetchAllData()
+//        tableView.reloadData()
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
