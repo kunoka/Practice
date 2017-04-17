@@ -121,12 +121,18 @@ class AreaTableViewController: UITableViewController, NSFetchedResultsController
         }
         actionShare.backgroundColor = UIColor.orange
         let actionDel = UITableViewRowAction(style: .destructive, title: "删除") { (_, indexPath) in
-            self.areas.remove(at: indexPath.row)
+//            self.areas.remove(at: indexPath.row)
 //            self.areaImages.remove(at: indexPath.row)
 //            self.areas.remove(at: indexPath.row)
 //            self.provinces.remove(at: indexPath.row)
 //            self.parts.remove(at: indexPath.row)
 //            self.visited.remove(at: indexPath.row)
+            
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let context = appDelegate.persistentContainer.viewContext
+            
+            context.delete(self.fc.object(at: indexPath))
+            appDelegate.saveContext()
             
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
