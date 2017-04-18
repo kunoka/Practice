@@ -377,7 +377,7 @@
         <!--Navigation Controller-->
         <scene sceneID="nDQ-gv-xWF">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" hidesBarsOnSwipe="YES" id="s82-qe-jFa" sceneMemberID="viewController">
+                <navigationController extendedLayoutIncludesOpaqueBars="YES" automaticallyAdjustsScrollViewInsets="NO" hidesBarsOnSwipe="YES" id="s82-qe-jFa" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="Idh-3d-hMo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>

@@ -9,11 +9,12 @@
 import UIKit
 import CoreData
 
-class AreaTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
+class AreaTableViewController: UITableViewController, NSFetchedResultsControllerDelegate, UISearchResultsUpdating {
 
     var areas: [AreaMO] = []
     var fc: NSFetchedResultsController<AreaMO>!
-    
+    var sc: UISearchController!
+//    var searchResults: [AreeaMO] = [] // 定义一个空数组以保存搜索结果
 //    override var preferredStatusBarStyle: UIStatusBarStyle {
 //        return .lightContent
 //    }
@@ -23,8 +24,17 @@ class AreaTableViewController: UITableViewController, NSFetchedResultsController
 //    var parts = ["华南","西北","东南","西北","华南","东南","东北","西北","西南","华南","华中"]
 //    var visited = [Bool](repeatElement(false, count: 11))
     
+    func updateSearchResults(for searchController: UISearchController) {
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        sc = UISearchController(searchResultsController: nil)
+        sc.searchResultsUpdater = self
+        tableView.tableHeaderView = sc.searchBar
+        
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
         // 设置自动行高
