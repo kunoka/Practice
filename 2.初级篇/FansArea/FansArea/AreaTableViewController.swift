@@ -44,6 +44,11 @@ class AreaTableViewController: UITableViewController, NSFetchedResultsController
         sc = UISearchController(searchResultsController: nil)
         sc.searchResultsUpdater = self
         tableView.tableHeaderView = sc.searchBar
+        sc.dimsBackgroundDuringPresentation = false //可以点击
+        sc.searchBar.tintColor = UIColor.white
+//        sc.searchBar.barTintColor = UIColor.orange
+        sc.searchBar.placeholder = "输入地区名进行搜索。。。"
+        sc.searchBar.searchBarStyle = .minimal //透明
         
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
