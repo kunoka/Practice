@@ -39,17 +39,17 @@ class AreaTableViewController: UITableViewController, NSFetchedResultsController
         
         fetchAllData2()
     }
-    
+    // 即将发生变化
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.beginUpdates()
     }
-    
+    // 变更处理完
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.endUpdates()
     }
-    
+    // 正在变化之中
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
-        switch type {
+        switch type { // 变化类型
         case .delete:
             tableView.deleteRows(at: [indexPath!], with: .automatic)
         case .insert:
@@ -65,18 +65,21 @@ class AreaTableViewController: UITableViewController, NSFetchedResultsController
     }
     
     func fetchAllData2() {
+        // 请求结果类型是 AreaMO
         let request: NSFetchRequest<AreaMO> = AreaMO.fetchRequest() //获取全部数据
-        let sd = NSSortDescriptor(key: "name", ascending: true)
+        let sd = NSSortDescriptor(key: "name", ascending: true) // NSSortDescriptor 指定请求结果如何排序
         request.sortDescriptors = [sd]
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
+        // NSFetchedResultsController初始化后，指定代理
         fc = NSFetchedResultsController(fetchRequest: request , managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
         fc.delegate = self
         
         do {
             try fc.performFetch()
             if let objects = fc.fetchedObjects {
+                // 执行查询，把结果保存到数组中
                 areas = objects
             }
         } catch{
@@ -87,9 +90,10 @@ class AreaTableViewController: UITableViewController, NSFetchedResultsController
     
 //    func fetchAllData() {
 //        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//        // do, try, catch 错误处理
 //        do {
-//           areas = try appDelegate.persistentContainer.viewContext.fetch(AreaMO.fetchRequest())
-//        
+//            // 获取AreaMO此Entity的所有条目
+//            areas = try appDelegate.persistentContainer.viewContext.fetch(AreaMO.fetchRequest())
 //        } catch {
 //            print(error)
 //        }
@@ -121,14 +125,20 @@ class AreaTableViewController: UITableViewController, NSFetchedResultsController
         }
         actionShare.backgroundColor = UIColor.orange
         let actionDel = UITableViewRowAction(style: .destructive, title: "删除") { (_, indexPath) in
-            self.areas.remove(at: indexPath.row)
+//            self.areas.remove(at: indexPath.row)
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let context = appDelegate.persistentContainer.viewContext
+            
+            context.delete(self.fc.object(at: indexPath))
+            appDelegate.saveContext()
+            
 //            self.areaImages.remove(at: indexPath.row)
 //            self.areas.remove(at: indexPath.row)
 //            self.provinces.remove(at: indexPath.row)
 //            self.parts.remove(at: indexPath.row)
 //            self.visited.remove(at: indexPath.row)
             
-            tableView.deleteRows(at: [indexPath], with: .fade)
+//            tableView.deleteRows(at: [indexPath], with: .fade)
         }
         
         let actionTop = UITableViewRowAction(style: .default, title: "置顶") { (_, indexPath) in
@@ -191,7 +201,8 @@ class AreaTableViewController: UITableViewController, NSFetchedResultsController
         cell.thumbImageView.clipsToBounds = true
         
         cell.visitImageView.image = UIImage(named: "heart")
-        cell.visitImageView.isHidden = !areas[indexPath.row].isvisited
+//        cell.visitImageView.isHidden = !areas[indexPath.row].isvisited
+        cell.visitImageView.isHidden = true
 //        
 //        if visited[indexPath.row] {
 //            cell.visitImageView.isHidden = false

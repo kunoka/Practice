@@ -589,7 +589,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0WP-Nl-L0d" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="798-Yk-b21" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2261" y="824"/>
+            <point key="canvasLocation" x="2259.375" y="823.94366197183103"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="iMA-Ju-TWu">

@@ -15,18 +15,22 @@ class AddAreaController: UITableViewController, UIImagePickerControllerDelegate,
     var isVisited = false
     
     @IBAction func saveTap(_ sender: UIBarButtonItem) {
+        // 这里的 AppDelegate是系统的AppDelegate.swift文件
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        
+        // 创建一个 AreaMO实例，设置属性
+        // viewContext是持久化容器的context
         area = AreaMO(context: appDelegate.persistentContainer.viewContext)
         area.name = tfName.text
         area.part = tfPart.text
         area.province = tfProvince.text
         area.isvisited = isVisited
+        // 把图像转换成JPEG格式
         if let imageData = UIImageJPEGRepresentation(coverImageView.image!, 0.7) {
             area.image = NSData(data: imageData)
         }
         print("正在保存...")
         appDelegate.saveContext()
+        // 保存并退回到首页
         performSegue(withIdentifier: "unwindToHomeList", sender: self)
     }
     @IBOutlet weak var tfName: UITextField!

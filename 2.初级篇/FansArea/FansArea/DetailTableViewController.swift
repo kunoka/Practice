@@ -23,6 +23,11 @@ class DetailTableViewController: UITableViewController {
         tableView.estimatedRowHeight = 40
         tableView.rowHeight = UITableViewAutomaticDimension
         
+        // 设置好评的图片
+        if let rating = area.rating {
+            self.ratingBtn.setImage(UIImage(named: rating), for: .normal)
+        }
+       
         self.title = area.name
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -132,6 +137,9 @@ class DetailTableViewController: UITableViewController {
             self.area.rating = rating
             self.ratingBtn.setImage(UIImage(named: rating), for: .normal)
         }
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.saveContext()
         
     }
 
