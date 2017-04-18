@@ -14,7 +14,13 @@ class AreaTableViewController: UITableViewController, NSFetchedResultsController
     var areas: [AreaMO] = []
     var fc: NSFetchedResultsController<AreaMO>!
     var sc: UISearchController!
-//    var searchResults: [AreeaMO] = [] // 定义一个空数组以保存搜索结果
+    var searchResult: [AreaMO] = [] // 定义一个空数组以保存搜索结果
+    
+    func searchFilter(text: String) { //要搜索的文字
+       searchResult = areas.filter({ (area) -> Bool in
+        return area.name!.localizedCaseInsensitiveContains(text)
+       })
+    }
 //    override var preferredStatusBarStyle: UIStatusBarStyle {
 //        return .lightContent
 //    }
@@ -25,7 +31,11 @@ class AreaTableViewController: UITableViewController, NSFetchedResultsController
 //    var visited = [Bool](repeatElement(false, count: 11))
     
     func updateSearchResults(for searchController: UISearchController) {
-        
+        if var text = searchController.searchBar.text {
+            text = text.trimmingCharacters(in: .whitespaces)
+            searchFilter(text: text)
+            tableView.reloadData()
+        }
     }
     
     override func viewDidLoad() {
@@ -195,19 +205,21 @@ class AreaTableViewController: UITableViewController, NSFetchedResultsController
 //    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return areas.count
+        return sc.isActive ? searchResult.count : areas.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
 
+        let area = sc.isActive ? searchResult[indexPath.row] : areas[indexPath.row]
         // Configure the cell...
-        cell.nameLabel?.text = areas[indexPath.row].name
-        cell.provinceLabel?.text = areas[indexPath.row].province
-        cell.partLabel?.text = areas[indexPath.row].part
-        cell.thumbImageView.image = UIImage(data: areas[indexPath.row].image as! Data)
+        cell.nameLabel?.text = area.name
+        cell.provinceLabel?.text = area.province
+        cell.partLabel?.text = area.part
+        cell.thumbImageView.image = UIImage(data: area.image! as Data)
         cell.thumbImageView.layer.cornerRadius = cell.thumbImageView.frame.size.height / 2
+        // 如果子视图的范围超出了父视图的边界，那么超出的部分就会被裁剪掉
         cell.thumbImageView.clipsToBounds = true
         
         cell.visitImageView.image = UIImage(named: "heart")
@@ -225,13 +237,11 @@ class AreaTableViewController: UITableViewController, NSFetchedResultsController
     }
  
 
-    /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
-        return true
+        return !sc.isActive
     }
-    */
 
     
     // Override to support editing the table view.
@@ -285,7 +295,7 @@ class AreaTableViewController: UITableViewController, NSFetchedResultsController
         // Pass the selected object to the new view controller.
         if segue.identifier == "showAreaDetail" {
             let dest = segue.destination as! DetailTableViewController
-            dest.area = areas[tableView.indexPathForSelectedRow!.row]
+            dest.area = sc.isActive ? searchResult[tableView.indexPathForSelectedRow!.row] :  areas[tableView.indexPathForSelectedRow!.row]
         }
     }
  
