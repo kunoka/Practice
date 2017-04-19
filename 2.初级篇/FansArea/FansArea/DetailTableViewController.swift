@@ -16,7 +16,7 @@ class DetailTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        LargeImageView.image = UIImage(data: area.image as! Data)
+        LargeImageView.image = UIImage(data: area.image! as Data)
         tableView.backgroundColor = UIColor(white: 0.98, alpha: 1)
         tableView.separatorColor = UIColor(white: 9, alpha: 1)
         tableView.tableFooterView = UIView(frame: CGRect.zero)

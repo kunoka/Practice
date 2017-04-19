@@ -58,7 +58,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
         }
         
         let leftIconView = UIImageView(frame: CGRect(x: 0, y: 0, width: 53, height: 53))
-        leftIconView.image = UIImage(data: area.image as! Data)
+        leftIconView.image = UIImage(data: area.image! as Data)
         av?.leftCalloutAccessoryView = leftIconView
         av?.pinTintColor = UIColor.green //图钉颜色
         

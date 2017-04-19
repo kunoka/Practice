@@ -15,6 +15,8 @@
 		4ACE01CB1E9E578100596450 /* Area.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACE01CA1E9E578100596450 /* Area.swift */; };
 		4ACE01D21E9F010600596450 /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACE01D11E9F010600596450 /* DetailTableViewController.swift */; };
 		4ACE01D41E9F03F800596450 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACE01D31E9F03F800596450 /* DetailTableViewCell.swift */; };
+		4AD03BC31EA6CACB000AA35B /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD03BC21EA6CACB000AA35B /* ContentViewController.swift */; };
+		4AD03BC51EA6CCDD000AA35B /* GuiderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AD03BC41EA6CCDD000AA35B /* GuiderViewController.swift */; };
 		4AFA70CC1E9CF8E10049674B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AFA70CB1E9CF8E10049674B /* AppDelegate.swift */; };
 		4AFA70D11E9CF8E10049674B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AFA70CF1E9CF8E10049674B /* Main.storyboard */; };
 		4AFA70D31E9CF8E10049674B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AFA70D21E9CF8E10049674B /* Assets.xcassets */; };
@@ -33,6 +35,8 @@
 		4ACE01CC1E9E594700596450 /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; };
 		4ACE01D11E9F010600596450 /* DetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
 		4ACE01D31E9F03F800596450 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
+		4AD03BC21EA6CACB000AA35B /* ContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
+		4AD03BC41EA6CCDD000AA35B /* GuiderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuiderViewController.swift; sourceTree = "<group>"; };
 		4AFA70C81E9CF8E10049674B /* FansArea.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FansArea.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AFA70CB1E9CF8E10049674B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4AFA70D01E9CF8E10049674B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -85,7 +89,9 @@
 			children = (
 				4AFA70CB1E9CF8E10049674B /* AppDelegate.swift */,
 				4AFA70CF1E9CF8E10049674B /* Main.storyboard */,
+				4AD03BC41EA6CCDD000AA35B /* GuiderViewController.swift */,
 				4AA376F61EA42AD6006EEBEC /* AddAreaController.swift */,
+				4AD03BC21EA6CACB000AA35B /* ContentViewController.swift */,
 				4AA376F41EA3637C006EEBEC /* MapViewController.swift */,
 				4AA376EF1EA2FC55006EEBEC /* ReviewViewController.swift */,
 				4ACE01D31E9F03F800596450 /* DetailTableViewCell.swift */,
@@ -184,10 +190,12 @@
 				4ACE01CB1E9E578100596450 /* Area.swift in Sources */,
 				4AA376F71EA42AD6006EEBEC /* AddAreaController.swift in Sources */,
 				4AA376F01EA2FC55006EEBEC /* ReviewViewController.swift in Sources */,
+				4AD03BC51EA6CCDD000AA35B /* GuiderViewController.swift in Sources */,
 				4ACE01D21E9F010600596450 /* DetailTableViewController.swift in Sources */,
 				4AFA70E01E9D03610049674B /* CustomTableViewCell.swift in Sources */,
 				4AA3771B1EA45A26006EEBEC /* FansArea.xcdatamodeld in Sources */,
 				4AFA70DE1E9CFAF10049674B /* AreaTableViewController.swift in Sources */,
+				4AD03BC31EA6CACB000AA35B /* ContentViewController.swift in Sources */,
 				4AFA70CC1E9CF8E10049674B /* AppDelegate.swift in Sources */,
 				4AA376F51EA3637C006EEBEC /* MapViewController.swift in Sources */,
 			);

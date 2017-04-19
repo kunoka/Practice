@@ -128,6 +128,11 @@ class AreaTableViewController: UITableViewController, NSFetchedResultsController
         super.viewDidAppear(animated)
 //        fetchAllData()
 //        tableView.reloadData()
+        print("<<<<<<<<<<< viewDidAppear 1 >>>>>>>>>>>>>>")
+        if let pageVC = storyboard?.instantiateViewController(withIdentifier: "GuideController") as?  GuiderViewController {
+            print("<<<<<<<<<<< viewDidAppear 2 >>>>>>>>>>>>>>")
+            present(pageVC, animated: true, completion: nil)
+        }
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
