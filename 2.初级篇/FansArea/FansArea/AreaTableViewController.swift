@@ -128,9 +128,8 @@ class AreaTableViewController: UITableViewController, NSFetchedResultsController
         super.viewDidAppear(animated)
 //        fetchAllData()
 //        tableView.reloadData()
-        print("<<<<<<<<<<< viewDidAppear 1 >>>>>>>>>>>>>>")
+        // 使用storyboard ID 来初始化一个翻页控制器，并模态展示出来
         if let pageVC = storyboard?.instantiateViewController(withIdentifier: "GuideController") as?  GuiderViewController {
-            print("<<<<<<<<<<< viewDidAppear 2 >>>>>>>>>>>>>>")
             present(pageVC, animated: true, completion: nil)
         }
     }

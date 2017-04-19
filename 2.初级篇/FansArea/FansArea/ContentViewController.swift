@@ -13,7 +13,7 @@ class ContentViewController: UIViewController {
     @IBOutlet weak var labelHeading: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var labelFooter: UILabel!
-    
+    // index用于保存当前页索引，其他3个用于数据传递
     var index = 0
     var heading = ""
     var imageName = ""
@@ -21,8 +21,6 @@ class ContentViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         labelHeading.text = heading
         imageView.image = UIImage(named: imageName)
         labelFooter.text = footer
